@@ -1,0 +1,63 @@
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.login {
+    padding: 2em 1em 5em;
+    position: relative;
+    border-radius:1em;
+    margin: 2em auto 1em;
+    background:#FFF;
+    box-shadow: 0 1em 3em -1em rgba(0, 0, 0, 0.5);
+    @include screen('mobile') {
+        outline:none;
+        border-radius:0;
+        margin: 0;
+    }
+    h1 {
+        max-width: 300px;
+        margin: 0 auto 3em;
+        position: relative;
+        z-index: 1;
+        img {
+            max-width: 50px;
+            display: block;
+            margin: 0 auto;
+            &.sub_logo {
+                max-width: 320px;
+            }
+        }
+    }
+    form {
+        width: 320px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        .btn{
+            width:100%;
+        }
+        .form_grp{
+            margin-bottom: .5em;
+        }
+        .form_grp label{
+            display:none;
+        }
+    }
+    &:before, &:after {
+        position: fixed;
+        bottom: -1em;
+        left: -6em;
+        width: 20em;
+        height: 20em;
+        content: "";
+        background: url(../images/bubble_green.svg) no-repeat center center;
+    }
+    &:after {
+        top: -20em;
+        right: -28em;
+        left: auto;
+        width: 40em;
+        height: 40em;
+        background: url(../images/bubble_yellow.svg) no-repeat center center;
+    }
+}
