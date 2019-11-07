@@ -10,6 +10,7 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="css/animate.css">
     <!-- hyUI -->
     <link rel="stylesheet" href="css/hyui.css">
 </head>
@@ -18,34 +19,37 @@
     <!-- wrapperStart -->
     <div class="wrapper">
         <div class="login">
-            <h1><img src="images/logo.png" alt="">
+            <h1 class="wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".7s"><img src="images/logo.png" alt="">
                 <img src="images/sub_logo.png" alt="" class="sub_logo"></h1>
-
-        <form >
-        <div class="form_grp">
-            <label for="username">帳號:</label>
-            <input name="username" type="text" placeholder="請輸入文字">
-            <!-- <div class="notice notice_error">請輸入正確帳號及密碼</div> -->
+            <form>
+                <div class="form_grp wow fadeInUp" data-wow-duration=".7s" data-wow-delay="1s">
+                    <label for="username">帳號:</label>
+                    <input name="username" type="text" placeholder="請輸入文字">
+                    <!-- <div class="notice notice_error">請輸入正確帳號及密碼</div> -->
+                </div>
+                <div class="form_grp wow fadeInUp" data-wow-duration=".5s" data-wow-delay="1.2s">
+                    <label for="password">密碼:</label>
+                    <input name="password" type="password" placeholder="請輸入密碼">
+                </div>
+                <div class="checkbox wow fadeInUp" data-wow-duration=".5s" data-wow-delay="1.3s">
+                    <label><input type="checkbox">記住我</label>
+                </div>
+                <div class="btn_grp">
+                    <button class="btn btn-blue wow fadeInUp" data-wow-duration=".5s" data-wow-delay="1.5s">登入</button>
+                </div>
+            </form>
         </div>
-        <div class="form_grp">
-            <label for="password">密碼:</label>
-            <input name="password" type="password" placeholder="請輸入密碼">
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox">記住我</label>
-        </div>
-        <div class="btn_grp">
-            <button class="btn btn-blue">登入</button>
-        </div>
-        <p>登入timeout時間為30分鐘</p>
-        </form>
-         </div>
+        <p class="info">登入timeout時間為30分鐘</p>
     </div>
     <a href="#" class="scrollToTop">回頁首</a>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="vendor/jquery.easing.min.js"></script>
     <script src="js/hyui.js"></script>
     <script src="js/customize.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
 </body>
 
 </html>
