@@ -5,10 +5,14 @@
 .login {
     padding: 2em 1em 5em;
     position: relative;
-    border-radius:1em;
-    margin: 2em auto 1em;
-    background:#FFF;
+    border-radius: 1em;
+    margin: 2em auto 3em;
+    background: #FFF;
     box-shadow: 0 1em 3em -1em rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    * {
+        box-sizing: border-box;
+    }
     @include screen('mobile') {
         outline:none;
         border-radius:0;
@@ -16,7 +20,7 @@
     }
     h1 {
         max-width: 300px;
-        margin: 0 auto 3em;
+        margin: 0 auto 2em;
         position: relative;
         z-index: 1;
         img {
@@ -33,24 +37,31 @@
         margin: 0 auto;
         position: relative;
         z-index: 1;
-        .btn{
-            width:100%;
+        .btn {
+            width: 100%;
         }
-        .form_grp{
+        .form_grp {
             margin-bottom: .5em;
         }
-        .form_grp label{
-            display:none;
+        .form_grp label {
+            display: none;
+        }
+        .checkbox {
+            padding-left: 1em;
         }
     }
     &:before, &:after {
         position: fixed;
+        z-index: -1;
         bottom: -3em;
         left: -6em;
         width: 20em;
         height: 20em;
         content: "";
         background: url(../images/bubble_green.svg) no-repeat center center;
+        @include screen('mobile') {
+            z-index: 0;
+        }
     }
     &:after {
         top: -20em;

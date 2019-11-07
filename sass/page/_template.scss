@@ -13,7 +13,7 @@ body {
         padding: 0;
     }
     @include screen('mobile') {
-        background:#FFF;
+        background:transparent;
     }
 }
 // 最外圍預設為100%
