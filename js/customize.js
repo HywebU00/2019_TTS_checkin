@@ -17,7 +17,7 @@ $(function() {
     // 如果點在外面
     $(document).on('touchend click', function(e) {
         var target = e.target;
-        if (!$(target).is('.info')) {
+        if (!$(target).is('.info')||!$(target).is('.dropdown-content')) {
             $('.dropdown-content').hide();
         }
     });

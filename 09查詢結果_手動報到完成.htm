@@ -29,44 +29,63 @@
                 <button class="btn btn-orange">Bryant</button>
             </div>
             <div class="content">
-                <h2 class="title">請輸入查詢條件</h2>
+                <div class="function">
+                    <button class="btn "> <i class="i_arrow_left"></i>回上一頁</button>
+                </div>
                 <!-- 手動查詢表單 -->
-                <form class="form_grid">
+                <div class="form_grid">
                     <div class="form_grp">
                         <label for="sample" class="form_title">活動編號</label>
                         <div class="form_content has_input">
-                            <input name="sample" type="text">
-                            <input name="sample" type="text">
+                            <input name="sample" type="text" value="1876597" readonly>
+                            <input name="sample" type="text" readonly>
                         </div>
                     </div>
                     <div class="form_grp">
                         <label for="sample" class="form_title">姓名</label>
                         <div class="form_content">
-                            <input name="sample" type="text">
+                            <input name="sample" type="text" value="林小華" readonly>
                         </div>
                     </div>
                     <div class="form_grp">
                         <label for="sample" class="form_title">E-mail</label>
                         <div class="form_content">
-                            <input name="sample" type="text">
+                            <input name="sample" type="text" value="lin@hyweb.com.tw" readonly>
                         </div>
                     </div>
                     <div class="form_grp">
                         <label for="sample" class="form_title">公司統編</label>
                         <div class="form_content">
-                            <input name="sample" type="text">
+                            <input name="sample" type="text" value="16541333" readonly>
                         </div>
                     </div>
-                    <div class="form_grp">
-                        <label for="sample" class="form_title">活動名稱</label>
-                        <div class="form_content">
-                            <input name="sample" type="text">
-                        </div>
-                    </div>
-                    <div class="btn_grp">
-                        <button class="btn btn-submit">送出</button>
-                    </div>
-                </form>
+                </div>
+                <div class="section">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>場次</th>
+                                <th>狀態</th>
+                                <th>報到時間</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>自行車設計自行車設計自行車設計自行車設計</td>
+                                <td><i class="i_check_color"></i></td>
+                                <td><time>2019-10-10 09:10</time></td>
+                            </tr>
+                            <tr>
+                                <td>自行車設計</td>
+                                <td><i class="i_check_color"></i></td>
+                                <td><time>2019-10-10 09:10</time></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn_grp">
+                    <button class="btn btn-orange">確認</button>
+                </div>
             </div>
             <!-- 常駐在底下的選單 -->
             <div class="bottom_navbar">
@@ -82,6 +101,7 @@
     <a href="#" class="scrollToTop">回頁首</a>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="vendor/jquery.easing.min.js"></script>
+    <script src="vendor/scrolltable/jquery.scroltable.min.js"></script><!-- scrolltable -->
     <script src="js/hyui.js"></script>
     <script src="js/customize.js"></script>
     <script src="js/wow.min.js"></script>

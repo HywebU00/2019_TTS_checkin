@@ -425,15 +425,15 @@ input[type="radio"]:checked {
 //---------------------------------------------readonly disable -------//
 input[readonly],
 input[disable] {
-    background: lighten($color-gray, 15);
-    color: darken($color-gray, 10);
-    border-color: darken($color-gray, 10);
+    background: lighten($color-gray, 25);
+    color:#000;
+    border-color: transparent;
     &~label {
         color: darken($color-gray, 10);
     }
     &:hover,
     &:focus {
-        border-color: darken($color-gray, 10);
+        border-color: transparent;
         box-shadow: none; // cursor: not-allowed;
     }
 }
