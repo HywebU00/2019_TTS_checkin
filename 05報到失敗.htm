@@ -29,19 +29,28 @@
                 <button class="btn btn-orange">Bryant</button>
             </div>
             <div class="content">
-                <!-- 拍照 -->
+            	<div class="scan_result">
+            		<div class="info_box wow bounceInDown" data-wow-duration="1s" >
+						<h3>報到失敗</h3>
+						<i class="i_error_color"></i>
+						<p class="error_message">查無資料<br/>請重新查詢</p>
+						<div class="btn_grp">
+							<button class="btn btn-orange">重新查詢</button>
+						</div>
+            		</div>
+            	</div>
                 <div class="camera_zone">
-                    <!-- 如果不需要框線，把下面.qrcode移除 -->
-                    <div class="qrcode"></div>
+                	<div class="qrcode"></div>
+
                 </div>
                 <!-- 常駐在底下的選單 -->
                 <div class="bottom_navbar">
-                    <ul>
-                        <li class="active"><a href="#"><i class="i_camera_color"></i><span>掃描報到</span></a></li>
-                        <li><a href="#"><i class="i_edit"></i><span>手動報到</span></a></li>
-                        <li><a href="#"><i class="i_check"></i><span>報到作業</span></a></li>
-                        <li><a href="#"><i class="i_home"></i><span>回首頁</span></a></li>
-                    </ul>
+					<ul>
+						<li class="active"><a href="#"><i class="i_camera_color"></i><span>掃描報到</span></a></li>
+						<li><a href="#"><i class="i_edit"></i><span>手動報到</span></a></li>
+						<li><a href="#"><i class="i_check"></i><span>報到作業</span></a></li>
+						<li><a href="#"><i class="i_home"></i><span>回首頁</span></a></li>
+					</ul>
                 </div>
             </div>
         </div>

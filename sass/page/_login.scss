@@ -1,7 +1,7 @@
 .wrapper {
     max-width: 800px;
     margin: 0 auto;
-    p {
+    &>p {
         text-align: center;
         font-size: .75em;
         color: #555;
@@ -36,9 +36,9 @@ h3 {
     padding-left: .5em;
 }
 .login {
-    padding: 2em 1em 5em;
     position: relative;
     border-radius: 1em;
+    padding: 2em 1em 5em;
     margin: 2em auto 3em;
     background: #FFF;
     box-shadow: 0 1em 3em -1em rgba(0, 0, 0, 0.5);
@@ -125,8 +125,24 @@ h3 {
 }
 .afterlogin {
     background: #F1F1F1;
-    min-height: 100vh;
     overflow: hidden;
+    position: relative;
+    padding: 2em 1em 5em;
+    margin: 2em auto 3em;
+    background: #FFF;
+    border-radius: 1em;
+    box-shadow: 0 1em 3em -1em rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    * {
+        box-sizing: border-box;
+    }
+    @include screen('mobile') {
+        border-radius: 0;
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+        background: #F1F1F1;
+    }
     select {
         option {
             @include text-overflow;
@@ -134,7 +150,12 @@ h3 {
     }
 }
 .content {
-    padding: 90px 1em 5em;
+    padding: 50px 1em 5em;
+    // @include screen('mobile') {
+    //     position:relative;
+    //     width: 100%;
+    //     height: 100%;
+    // }
 }
 .navbar {
     height: 60px;
@@ -142,10 +163,15 @@ h3 {
     box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, .75);
     padding: 5px 1em;
     margin-bottom: 1em;
-    position: fixed;
-    transform: translateZ(0);
+    position: absolute;
     background: #FFF;
     z-index: 99;
+    left: 0;
+    top: 0;
+    @include screen('mobile') {
+        position: fixed;
+        transform: translateZ(0);
+    }
     h1 {
         margin: 5px auto 0 0;
         width: auto;
@@ -184,8 +210,18 @@ h3 {
         height: 2.4em;
         padding: 0 24px 0 1em;
         border: 1px solid $color-gray;
-        background: #fff url(../images/icon/icon_select_arrow.png) no-repeat right center;
-        background-size: 16px;
+        @include text-overflow;
+        background:#FFF;
+        &:after {
+            position: absolute;
+            right: .8em;
+            top:.6em;
+            width: 16px;
+            height: 16px;
+            content: "";
+            background: url(../images/icon/icon_select_arrow.png) no-repeat center center #fff ;
+            background-size: 16px;
+        }
     }
     .dropdown-content {
         background: #FFF;
@@ -194,7 +230,7 @@ h3 {
         border: 1px solid rgba(0, 0, 0, .15);
         box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
         font-size: .813em;
-        max-width: 20em;
+        max-width: 100%;
         height: 150px;
         overflow-y: auto;
         position: relative;
@@ -202,12 +238,10 @@ h3 {
         width: 96%;
         left: 2%;
         position: absolute;
+        display:none;
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
         // display: none;
-        @include screen('mobile') {
-            max-width: 100%;
-        }
         ul {
             @include li-reset;
             padding: .4em 1em;
@@ -253,6 +287,8 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
+    height: 100%;
     .qrcode {
         @include aspect-ratio(1, 1);
         overflow: visible;
@@ -323,43 +359,55 @@ h3 {
     width: 100%;
     height: 100%;
     z-index: 98;
-    top:0;
+    top: 0;
     left: 0;
-    right:0;
-    bottom:0;
-    background:rgba(0,0,0,.65);
-    .info_box{
-        width: 280px;
-        height:320px;
-        margin:26% auto 0;
-        padding:1.5em 1em;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .65);
+    .info_box {
+        width: 90%;
+        height: 420px;
+        margin: 26% 5% 0;
+        padding: 1.5em 1em;
         text-align: center;
-        background:#FFF;
-        vertical-align:top;
-        box-shadow:0px 0px 20px -5px rgba(0,0,0,.5);
-        h3{
+        background: #FFF;
+        vertical-align: top;
+        box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, .5);
+        h3 {
             font-size: 2em;
             margin: 0 0 1em;
             padding: 0;
         }
-        i{
+        i {
             font-size: 5em;
         }
-        ul{
+        ul {
             @include li-reset;
             margin-top: 1em;
-            li{
+            li {
                 text-align: left;
                 font-size: .938em;
                 font-weight: bold;
                 border-bottom: 1px dashed #DDD;
                 margin-bottom: .5em;
-                span{
-                    width: 80px;
-                    display:inline-block;
+                span {
+                    width: 75px;
+                    display: inline-block;
                     margin-right: 1em;
+                    color:#888;
                 }
             }
         }
+        .btn_grp{
+            margin:1em;
+        }
+
+    }
+    .error_message{
+        font-size: 1.5em;
+        font-weight: bold;
+        color:#F22F14;
+        line-height: 1.4em;
+        margin: 0;
     }
 }
