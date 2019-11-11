@@ -15,9 +15,9 @@ $(function() {
         });
     });
     // 如果點在外面
-    $(document).on('touchend click', function(e) {
+    $(document).on('click', function(e) {
         var target = e.target;
-        if (!$(target).is('.info')||!$(target).is('.dropdown-content')) {
+        if (!$(target).is('.info')) {
             $('.dropdown-content').hide();
         }
     });
