@@ -3,7 +3,7 @@
 
 //-------------------------------------------------------------顏色---------//
 // 定義顏色 此顏色可自由變換
-$primaryColor:				#21BAFF;				//主色
+$primaryColor:				#F77810;				//主色
 $secondaryColor:			#781F79; 				//輔色
 $lightColor:				#FCC211;				//點綴
 $linkColor:					#21BAFF;				//連結
@@ -21,7 +21,7 @@ $color-dark: 				#333;
 $color-hr:					#666;		  			 //hr顏色
 $color-word:				#222;                    //一般字的顏色
 // 連結顏色
-$aColor:					#21BAFF;
+$aColor:					$primaryColor;
 $aHover:					lighten($aColor,10);
 
 // 表單focus顏色

@@ -3,7 +3,7 @@
         content: "";
         display: inline-block;
         height: 1em;
-        width: 1em; 
+        width: 1em;
         vertical-align: middle;
         speak: none;
     }
@@ -44,11 +44,20 @@
 .i_bookmark {
     @include hyui_icon('icon_bookmark');
 }
+.i_camera {
+    @include hyui_icon('icon_camera');
+}
+.i_camera_color {
+    @include hyui_icon('icon_camera_color');
+}
 .i_chat {
     @include hyui_icon('icon_chat');
 }
 .i_check {
     @include hyui_icon('icon_check');
+}
+.i_check_color {
+    @include hyui_icon('icon_check_color');
 }
 .i_clock {
     @include hyui_icon('icon_clock');

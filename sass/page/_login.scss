@@ -4,12 +4,36 @@
     p {
         text-align: center;
         font-size: .75em;
-        color: #999;
+        color: #555;
         position: fixed;
         bottom: 0;
         width: 100%;
-        left:0;
+        left: 0;
     }
+}
+h2.title {
+    font-size: 1.5em;
+    text-align: center;
+    position: relative;
+    margin: 0 0 2em;
+    &:after {
+        position: absolute;
+        width: 30%;
+        height: 4px;
+        background: $primaryColor;
+        bottom: -10px;
+        left: 50%;
+        margin-left: -15%;
+        content: "";
+    }
+    @include gutter($grid-gutter-width);
+    @include screen('mobile') {
+        text-align: center;
+    }
+}
+h3 {
+    margin: 0 0 .5em;
+    padding-left: .5em;
 }
 .login {
     padding: 2em 1em 5em;
@@ -46,9 +70,6 @@
         margin: 0 auto;
         position: relative;
         z-index: 1;
-        .btn {
-            width: 100%;
-        }
         .form_grp {
             margin-bottom: 1em;
         }
@@ -89,6 +110,8 @@
         background: url(../images/bubble_green.svg) no-repeat center center;
         @include screen('mobile') {
             z-index: 0;
+            bottom: -4em;
+            left: -12em;
         }
     }
     &:after {
@@ -98,5 +121,245 @@
         width: 40em;
         height: 40em;
         background: url(../images/bubble_yellow.svg) no-repeat center center;
+    }
+}
+.afterlogin {
+    background: #F1F1F1;
+    min-height: 100vh;
+    overflow: hidden;
+    select {
+        option {
+            @include text-overflow;
+        }
+    }
+}
+.content {
+    padding: 90px 1em 5em;
+}
+.navbar {
+    height: 60px;
+    width: 100%;
+    box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, .75);
+    padding: 5px 1em;
+    margin-bottom: 1em;
+    position: fixed;
+    transform: translateZ(0);
+    background: #FFF;
+    z-index: 99;
+    h1 {
+        margin: 5px auto 0 0;
+        width: auto;
+        float: left;
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            height: 40px;
+            margin-left: -4px;
+        }
+    }
+    .btn {
+        float: right;
+        padding: .3em 1em .5em;
+        margin-top: .5em;
+    }
+}
+.btn_grp {
+    margin: 2em 0 3em;
+    .btn {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        font-size: 1.25em;
+    }
+}
+.item {
+    margin-bottom: 1em;
+}
+.dropdown-button {
+    position: relative;
+    .info {
+        border-radius: 2em;
+        border: 1px solid #DDD;
+        line-height: 2.4em;
+        height: 2.4em;
+        padding: 0 24px 0 1em;
+        border: 1px solid $color-gray;
+        background: #fff url(../images/icon/icon_select_arrow.png) no-repeat right center;
+        background-size: 16px;
+    }
+    .dropdown-content {
+        background: #FFF;
+        border-radius: 1em;
+        margin-top: .2em;
+        border: 1px solid rgba(0, 0, 0, .15);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        font-size: .813em;
+        max-width: 20em;
+        height: 150px;
+        overflow-y: auto;
+        position: relative;
+        z-index: 1;
+        width: 96%;
+        left: 2%;
+        position: absolute;
+        -webkit-overflow-scrolling: touch;
+        -webkit-transform: translate3d(0, 0, 0);
+        // display: none;
+        @include screen('mobile') {
+            max-width: 100%;
+        }
+        ul {
+            @include li-reset;
+            padding: .4em 1em;
+            li {
+                border-bottom: 1px dashed #DDD;
+                a {
+                    padding: .3em 1em .3em 1.5em;
+                    display: block;
+                    @include aSetting_nocolor;
+                    position: relative;
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        border: 2px solid $primaryColor;
+                        transform: rotate(45deg);
+                        border-bottom: none;
+                        border-left: none;
+                        width: 4px;
+                        height: 4px;
+                        top: .9em;
+                        left: .2em;
+                        transition: .3s ease-out;
+                    }
+                    span {
+                        color: $color-red;
+                        display: inline-block;
+                        margin: 0 .2em 0 0;
+                    }
+                    &:hover, &:focus {
+                        &:before {
+                            left: .5em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.camera_zone {
+    background: rgba(136, 136, 136, .3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .qrcode {
+        @include aspect-ratio(1, 1);
+        overflow: visible;
+        width: 200px;
+        border: 1px solid #FFF;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &:after {
+            position: absolute;
+            content: "請對準掃描區域";
+            bottom: -2em;
+            color: #FFF;
+            width: 100%;
+            text-align: center;
+            text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
+            font-size: .813em;
+        }
+    }
+}
+.bottom_navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    transform: translateZ(0);
+    z-index: 999;
+    @include gradient(#FFF, #CCC, vertical);
+    ul {
+        @include li-reset;
+        li {
+            width: 25%;
+            float: left;
+            display: block;
+            padding: 5px;
+            height: 80px;
+            &.active {
+                a {}
+            }
+            a {
+                display: block;
+                text-align: center;
+                border-radius: 4px;
+                height: 70px;
+                padding: .5em;
+                box-sizing: border-box;
+                i {
+                    font-size: 1.75em;
+                }
+                span {
+                    text-align: center;
+                    color: #222;
+                    display: block;
+                    font-size: .75em;
+                }
+                &:hover, &:focus {
+                    background: rgba(0, 0, 0, .05);
+                }
+            }
+        }
+    }
+}
+.scan_result {
+    position: fixed;
+    transform: translateZ(0);
+    width: 100%;
+    height: 100%;
+    z-index: 98;
+    top:0;
+    left: 0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,.65);
+    .info_box{
+        width: 280px;
+        height:320px;
+        margin:26% auto 0;
+        padding:1.5em 1em;
+        text-align: center;
+        background:#FFF;
+        vertical-align:top;
+        box-shadow:0px 0px 20px -5px rgba(0,0,0,.5);
+        h3{
+            font-size: 2em;
+            margin: 0 0 1em;
+            padding: 0;
+        }
+        i{
+            font-size: 5em;
+        }
+        ul{
+            @include li-reset;
+            margin-top: 1em;
+            li{
+                text-align: left;
+                font-size: .938em;
+                font-weight: bold;
+                border-bottom: 1px dashed #DDD;
+                margin-bottom: .5em;
+                span{
+                    width: 80px;
+                    display:inline-block;
+                    margin-right: 1em;
+                }
+            }
+        }
     }
 }
