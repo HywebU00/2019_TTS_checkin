@@ -391,7 +391,7 @@ $(function() {
                 tabItemWidth;
             _tab.find('.active').next('.tabContent').show();
 
-                _tabContent.css('top', tabItemHeight);
+                _tabContent.css('top', tabItemHeight+10);
                 _tab.height(tabContentHeight + tabItemHeight);
                 tabItemWidth = (tabwidth - (tabItemLength - 1) * tiGap) / tabItemLength;
                 _tabItem.width(tabItemWidth).css('margin-left', tiGap);

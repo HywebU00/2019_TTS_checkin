@@ -33,21 +33,23 @@
             text-align: center;
             font-weight: bold;
             text-decoration: none;
-            background: #CCC;
-            border-right: 1px solid #AAA;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, .25) inset;
+            background: #DDD;
+            border: 1px solid #CCC;
+            border-right: none;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, .15) inset;
             @include text-overflow;
             @include box-sizing;
             span, em {
                 display: block;
                 color: #555;
-                margin-bottom: .5em;
+                margin-bottom: 1em;
             }
             em {
                 font-size: 1.75em;
                 font-style: normal;
                 font-weight: bold;
                 text-shadow: 0px 0px 5px #FFF;
+                margin-bottom: .2em;
             }
         }
         &:first-child {
@@ -58,7 +60,7 @@
         &:nth-child(5) {
             a {
                 border-radius: 0 .5em .5em 0;
-                border-right: none;
+                border-right:1px solid #CCC;
             }
         }
     }
