@@ -678,6 +678,7 @@ h3 {
 }
 .function {
     text-align: right;
+    margin-bottom: .5em;
     .btn {
         font-size: .75em;
     }
@@ -768,7 +769,13 @@ h3 {
 }
 .select_zone {
     padding: 1em;
-    background: #F1F1F1;
+    @include gradient(adjust_hue(saturate(lighten(#CCC, 13), 31), -8), darken(#CCC, 15), vertical);
+    border-radius: .5em;
+    margin-bottom: .5em;
+}
+.content_result{
+    padding: 1em;
+    background: #FFF;
     border-radius: .5em;
     margin-bottom: .5em;
 }
