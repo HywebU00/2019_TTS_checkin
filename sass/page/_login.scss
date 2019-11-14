@@ -767,6 +767,9 @@ h3 {
         }
     }
 }
+.bold{
+    font-weight: bold;
+}
 .select_zone {
     padding: 1em;
     @include gradient(adjust_hue(saturate(lighten(#CCC, 13), 31), -8), darken(#CCC, 15), vertical);
