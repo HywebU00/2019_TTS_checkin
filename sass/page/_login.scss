@@ -741,12 +741,11 @@ h3 {
                 text-align: center;
                 font-size: 1.25em;
                 font-weight: bold;
-                @include gradient(#FFF, #DDD, vertical);
+                color: #FFF;
+                @include gradient(adjust_hue(saturate(lighten($color-blue, 13), 31), -8), darken($color-blue, 15), vertical);
                 box-shadow: 0 .3em 2em -1em rgba(0, 0, 0, .45);
                 &:hover, &:focus {
-                    color: #FFF;
-                    @include gradient(adjust_hue(saturate(lighten($color-blue, 13), 31), -8), darken($color-blue, 15), vertical);
-                    box-shadow: 0px 1em 1.2em -.5em rgba(0, 0, 0, .25);
+                    box-shadow: 0px 0px 1.5em adjust_hue(saturate(lighten($color-blue, 13), 31), -8);
                 }
                 @include screen('xs_mobile') {
                     text-align: left;
@@ -769,9 +768,9 @@ h3 {
         }
     }
 }
-.select_zone{
-    padding:1em;
+.select_zone {
+    padding: 1em;
     background: #F1F1F1;
-    border-radius:.5em;
+    border-radius: .5em;
     margin-bottom: .5em;
 }

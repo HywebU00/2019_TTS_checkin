@@ -1,5 +1,6 @@
 // 自行加入的JS請寫在這裡
 $(function() {
+    // 下拉選取帶資料
     $('.dropdown-content').hide();
     $('.select_zone').find('.item').each(function(index, el) {
         $(this).find('.dropdown-button .info').off().click(function(e) {
@@ -21,6 +22,7 @@ $(function() {
             $('.dropdown-content').hide();
         }
     });
+    // fix選單
     if ($('body').has('.bottom_navbar')) {
         $(window).on("load resize", function(e) {
             _ww = $(window).width();
@@ -31,6 +33,7 @@ $(function() {
             }
         });
     }
+    // menu按鈕
     if ($('.afterlogin').length > 0) {
         $('.navbar').append('<div class="menu_btn"><span></span><span></span><span></span></div>');
         $('.m_menu').append('<div class="overlay"></div>');
@@ -38,6 +41,7 @@ $(function() {
         $('.m_menu').css('margin-left', -1.5 * _mWidth).hide();
         var m_status = false;
         $('.menu_btn').off().click(function(e) {
+            $(this).blur();
             _mWidth = $('.m_menu').width();
             if (!m_status) {
                 $('.m_menu').css('margin-left', -1.5 * _mWidth);
@@ -55,7 +59,8 @@ $(function() {
             e.preventDefault();
         });
     }
-    if($('body').has('.info_box')){
+    // 報名狀態
+    if ($('body').has('.info_box')) {
         $('.info_box').find('.btn').off().click(function(e) {
             $('.scan_result').hide();
             e.preventDefault();
