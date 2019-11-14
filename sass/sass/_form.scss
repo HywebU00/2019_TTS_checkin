@@ -411,6 +411,12 @@ input[type="radio"]:checked, input[type="radio"]:focus {
     background-color: $form-focus;
     outline: none;
 }
+input[type="checkbox"]{
+    background-image: url(../images/basic/icon_checked.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 98%;
+}
 input[type="checkbox"]:checked {
     background-image: url(../images/basic/icon_checked.svg);
     background-repeat: no-repeat;
@@ -425,7 +431,7 @@ input[type="radio"]:checked {
 //---------------------------------------------readonly disable -------//
 input[readonly],
 input[disable] {
-    background: lighten($color-gray, 25);
+    background: lighten($color-gray, 15);
     color:#000;
     border-color: transparent;
     &~label {

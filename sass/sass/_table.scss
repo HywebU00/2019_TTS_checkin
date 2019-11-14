@@ -12,6 +12,8 @@ table {
     }
     td {
         border: #ddd 1px solid;
+        border-left: none;
+        border-right: none;
         word-break: break-all;
         a {
             word-break: break-all;
@@ -21,6 +23,8 @@ table {
         background-color: #F3F3F3;
         color: #333;
         border: #DDD 1px solid;
+        border-left: none;
+        border-right: none;
         text-align: center;
         white-space: nowrap;
     }
@@ -150,7 +154,7 @@ table {
         }
     }
 }
-.scroltable{
+.scroltable {
     // min-width:600px !important;
 }
 .scroltable-wrapper {
@@ -172,7 +176,7 @@ table {
 }
 .scroltable-nav.scroltable-nav-left {
     left: 0;
-    @include gradient(rgba(255,255,255,1),rgba(255,255,255,0),horizontal);
+    @include gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0), horizontal);
     .tablearrow_left {
         position: fixed;
         left: 0em;
@@ -197,7 +201,7 @@ table {
 }
 .scroltable-nav.scroltable-nav-right {
     right: 0;
-    @include gradient(rgba(255,255,255,0),rgba(255,255,255,1),horizontal);
+    @include gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), horizontal);
     .tablearrow_right {
         position: fixed;
         top: 0em;

@@ -17,7 +17,7 @@ $btn-radius:4px;
     text-shadow:1px 2px 2px RGBA(0,0,0,.75);
     @include border-radius(2em);
     @include gradient(darken($btn-bg, 15), adjust_hue(saturate(lighten($btn-bg, 13), 31), -8), diagonal);
-    box-shadow:0px 0px 1em  saturate($btn-bg, 15);
+    box-shadow:0px 0px 0em  saturate($btn-bg, 15);
     transition:.3s ease-out;
     &:hover, &:focus {
         background-color: darken($btn-bg, 10); // Old browsers
