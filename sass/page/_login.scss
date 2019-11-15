@@ -579,7 +579,7 @@ h3 {
                 background: #FFF;
                 width: 100%;
                 display: block;
-                padding: .6em 5em .2em 1em;
+                padding: .4em 5em .2em 1em;
                 margin-bottom: .3em;
                 color: #333;
                 position: relative;
@@ -588,12 +588,12 @@ h3 {
                 span.name {
                     display: block;
                     width: 100%;
-                    font-size: 1.25em;
+                    font-size: 1.125em;
                     font-weight: bold;
-                    margin-bottom: .3em;
+                    margin-bottom: .1em;
                 }
                 span.company {
-                    font-size: .938em;
+                    font-size: .875em;
                     color: #999;
                 }
                 span.status {
@@ -649,7 +649,10 @@ h3 {
         .i_check {
             opacity: .2;
         }
-        td:first-child {
+        td.num {
+            width: 5%;
+        }
+        td.event {
             width: 45%;
         }
         span.checked {
@@ -770,9 +773,10 @@ h3 {
 .bold{
     font-weight: bold;
 }
+
 .select_zone {
     padding: 1em;
-    @include gradient(adjust_hue(saturate(lighten(#CCC, 13), 31), -8), darken(#CCC, 15), vertical);
+    @include gradient(lighten(#CCC, 10), darken(#CCC, 0), vertical);
     border-radius: .5em;
     margin-bottom: .5em;
 }
