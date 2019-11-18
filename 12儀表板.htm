@@ -105,7 +105,7 @@
                         <table>
                             <tr>
                                 <th></th>
-                                <th> 國外自行預登 <a href="#">前十大買主國</a>
+                                <th> 國外自行預登 <a href="#" id="openModal">前十大買主國</a>
                                     <a href="#">完整國別分析</a>
                                 </th>
                                 <th>國外自行預登 <a href="#">前十大買主國</a>
@@ -220,7 +220,7 @@
         </div>
     </div>
     <!--燈箱視窗展示統計圖-->
-    <div id="sample" class="modal" style="display: block;">
+    <div id="sample" class="modal">
         <h2>前十大買主國</h2>
         <div class="chart_box">
             <canvas id="myChart"></canvas>
@@ -256,8 +256,16 @@
     /*-----------------------------------*/
     /////////////燈箱動作/////////////
     /*-----------------------------------*/
-    $('.modal').prepend('<button type="button" class="close">關閉</button>'); //新增關閉按鈕
+    $('.modal').prepend('<button type="button" class="close">關閉</button>');
+    $('.modal').after('<div class="modal_overlay"></div>');
+    //新增關閉按鈕
+    $('#openModal').off().click(function(e) {
+         $('#sample').show();
+         $('.modal_overlay').show();
+       e.preventDefault();
+    });
     //關閉function
+
     function closeModal() {
         $('.modal').hide();
         $('.modal_overlay').hide();

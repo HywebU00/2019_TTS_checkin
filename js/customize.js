@@ -82,25 +82,5 @@ $(function() {
             });
         }
     });
-    /*-----------------------------------*/
-    /////////////modal設定/////////////
-    /*-----------------------------------*/
-    $('.modal').after('<div class="modal_overlay"></div>'); //新增透明底
-    $('.modal').prepend('<button type="button" class="close">關閉</button>'); //新增關閉按鈕
-    //按鈕動作
-    $('#openModal').click(function(e) {
-        $('.modal_overlay').fadeIn(100);
-        $('body').addClass('noscroll');
-        $('body').addClass('noscroll');
-        e.preventDefault();
-    });
-    //關閉function
-    function closeModal() {
-        $('.modal').hide();
-        $('.modal_overlay').hide();
-        $('body').removeClass('noscroll');
-    }
-    //點選關閉按鈕及透明底都可關閉
-    $('.modal_overlay').click(closeModal);
-    $('.modal .close').click(closeModal);
+
 });
