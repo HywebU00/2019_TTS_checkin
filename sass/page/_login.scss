@@ -779,10 +779,42 @@ h3 {
     @include gradient(lighten(#CCC, 10), darken(#CCC, 0), vertical);
     border-radius: .5em;
     margin-bottom: .5em;
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
 }
 .content_result{
     padding: 1em;
     background: #FFF;
     border-radius: .5em;
     margin-bottom: .5em;
+}
+[class^="col-"]{
+    margin-bottom: .5em;
+}
+.hy_block{
+    border-radius:.5em;
+    box-shadow: 0 1em 2em -1em rgba(0, 0, 0, 0.5);
+    background: #FFF;
+    padding:1em;
+    margin-bottom: 1em;
+    table{
+        font-size: .813em;
+    }
+    h3{
+        padding-left: 0;
+        color:$color-orange;
+    }
+    .fix_th_table{
+        th{
+            a{
+                display:block;
+            }
+        }
+    }
+}
+.chart_box{
+    min-height: 250px;
 }

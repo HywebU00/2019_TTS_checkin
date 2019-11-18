@@ -20,13 +20,15 @@ table {
         }
     }
     th {
-        background-color: #555;
-        color: #FFF;
+        background-color: #F1F1F1;
+        color: #222;
         border: #DDD 1px solid;
         border-left: none;
         border-right: none;
         text-align: center;
         white-space: nowrap;
+        padding-left: .5em;
+        padding-right: .5em;
     }
     &.table_hover {
         tr:hover {
@@ -84,13 +86,13 @@ table {
 // fix_th_table
 .fix_th_table {
     margin: 1em 0;
-    @include screen('mobile') {
+    @include screen('xs_mobile') {
         position: relative;
         width: 100%;
         overflow: hidden !important;
     }
     table {
-        @include screen('mobile') {
+        @include screen('xs_mobile') {
             display: block;
             width: 100%;
             // overflow:hidden;
@@ -102,22 +104,30 @@ table {
     }
     th,
     td {
-        width: 10em;
-        padding: .8em 0;
+        width: auto;
+        padding: .5em .2em;
         text-align: center;
-        line-height: 1.2;
-        @include screen('mobile') {
+        line-height: 1.5;
+        min-height: 2.8em;
+        @include screen('xs_mobile') {
+            width: 8em;
             display: inline-block;
             margin-right: -6px;
             margin-left: 0;
             margin-top: -1px;
         }
     }
+    td {
+        width: auto;
+        @include screen('xs_mobile') {
+            width: 8em;
+        }
+    }
     th {
         &:first-child {
             width: 8em;
             white-space: normal;
-            @include screen('mobile') {
+            @include screen('xs_mobile') {
                 position: absolute !important;
                 left: 0;
                 top: auto;
@@ -125,7 +135,12 @@ table {
         }
     }
     tr {
-        @include screen('mobile') {
+        th {
+            &:first-child {
+                width: 8em;
+            }
+        }
+        @include screen('xs_mobile') {
             display: block;
             clear: both;
             white-space: nowrap;
