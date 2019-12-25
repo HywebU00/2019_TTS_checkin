@@ -104,6 +104,9 @@ a.more {
     z-index: 99999999;
     text-indent: -999999px;
     -webkit-transform: translate3d(0, 0, 0);
+    &.padding-bottom{
+        bottom:6em;
+    }
     &:hover,&:focus{
         background: url(../images/basic/top.png) no-repeat center top rgba(0, 0, 0, 0.8);
         box-shadow:none;

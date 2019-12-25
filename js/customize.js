@@ -1,5 +1,93 @@
 // 自行加入的JS請寫在這裡
 $(function() {
+    //
+    $('.colorbox_search').css('top', '100%').hide();
+    $('.colorbox_showlist').css('top', '100%').hide();
+    $('.colorbox_sort').css('top', '100%').hide();
+    $('.open_search').off().click(function(e) {
+        $('.colorbox_showlist').css('top', '100%').hide();
+        $('.colorbox_sort').css('top', '100%').hide();
+        $('.colorbox_search').show().stop(true, true).animate({ 'top': '3.6em' }, 600, 'easeOutQuint');
+        e.preventDefault();
+    });
+    $('.open_sort').off().click(function(e) {
+        $('.colorbox_search').css('top', '100%').hide();
+        $('.colorbox_showlist').css('top', '100%').hide();
+        $('.colorbox_sort').show().stop(true, true).animate({ 'top': '3.6em' }, 600, 'easeOutQuint');
+        e.preventDefault();
+    });
+    $('.open_showlist').off().click(function(e) {
+        $('.colorbox_search').css('top', '100%').hide();
+        $('.colorbox_sort').css('top', '100%').hide();
+        $('.colorbox_showlist').show().stop(true, true).animate({ 'top': '3.6em' }, 600, 'easeOutQuint');
+        e.preventDefault();
+    });
+    $('[class^="colorbox"]').find('.i_close').off().click(function(e) {
+        $('[class^="colorbox"]').stop(true, true).animate({ 'top': '100%' }, 400, 'easeOutQuint').hide(500);
+        e.preventDefault();
+    });
+    // news_more_content
+    $('.more_content').hide();
+    $('.list ul li').each(function(index, el) {
+        $(this).find('.btn-more').off().click(function(e) {
+            $(this).parents('li').siblings().find('.more_content').hide();
+            $(this).siblings('.more_content').slideToggle();
+            e.preventDefault();
+        });
+    });
+    $('.album ul li').each(function(index, el) {
+        $(this).find('.btn-more').off().click(function(e) {
+            $(this).parents('li').siblings().find('.more_content').hide();
+            $(this).siblings('.more_content').slideToggle();
+            e.preventDefault();
+        });
+    });
+    // language
+    if ($('.language_choose').length > 0) {
+        var scrollDuration = 20;
+        var leftPaddle = document.getElementsByClassName('left-paddle');
+        var rightPaddle = document.getElementsByClassName('right-paddle');
+        var itemsLength = $('.language_choose ul li').length;
+        var itemSize = $('.language_choose ul li').outerWidth(true);
+        var paddleMargin = 30;
+        var getMenuWrapperSize = function() {
+            return $('.language_choose').outerWidth();
+        }
+        var menuWrapperSize = getMenuWrapperSize();
+        $(window).on('resize', function() {
+            menuWrapperSize = getMenuWrapperSize();
+        });
+        var menuVisibleSize = menuWrapperSize;
+        var getMenuSize = function() {
+            return itemsLength * itemSize;
+        };
+        var menuSize = getMenuSize();
+        var menuInvisibleSize = menuSize - menuWrapperSize;
+        var getMenuPosition = function() {
+            return $('.language_choose ul').scrollLeft();
+        };
+        $('.language_choose ul').on('scroll', function() {
+            menuInvisibleSize = menuSize - menuWrapperSize;
+            var menuPosition = getMenuPosition();
+            var menuEndOffset = menuInvisibleSize - paddleMargin;
+            if (menuPosition <= paddleMargin) {
+                $(leftPaddle).addClass('hidden');
+                $(rightPaddle).removeClass('hidden');
+            } else if (menuPosition < menuEndOffset) {
+                $(leftPaddle).removeClass('hidden');
+                $(rightPaddle).removeClass('hidden');
+            } else if (menuPosition >= menuEndOffset) {
+                $(leftPaddle).removeClass('hidden');
+                $(rightPaddle).addClass('hidden');
+            }
+        });
+        $(rightPaddle).on('click', function() {
+            $('.language_choose ul').animate({ scrollLeft: menuInvisibleSize }, scrollDuration);
+        });
+        $(leftPaddle).on('click', function() {
+            $('.language_choose ul').animate({ scrollLeft: '0' }, scrollDuration);
+        });
+    }
     // 下拉選取帶資料
     $('.dropdown-content').hide();
     $('.select_zone').find('.item').each(function(index, el) {
@@ -15,21 +103,35 @@ $(function() {
             e.preventDefault();
         });
     });
-    // 如果點在外面
-    $(document).on('click', function(e) {
-        var target = e.target;
-        if (!$(target).is('.info')) {
-            $('.dropdown-content').hide();
-        }
+    $('.dropdown-button').each(function(index, el) {
+        $(this).find('.info').off().click(function(e) {
+            $(this).next('.dropdown-content').stop().fadeToggle();
+            e.preventDefault();
+        });
     });
+    // 如果點在外面
+    // $(document).on('click', function(e) {
+    //     var target = e.target;
+    //     if (!$(target).is('.dropdown-content')) {
+    //         $('.dropdown-content').hide();
+    //     }
+    // });
     // fix選單
-    if ($('body').has('.bottom_navbar')) {
+    if ($('.bottom_navbar').length>0) {
+        $('.scrollToTop').addClass('padding-bottom');
+        var bottom_li = $('.bottom_navbar ul li').length;
+        if (bottom_li == 2) {
+            $('.bottom_navbar').addClass('has_2');
+        }
+        if (bottom_li == 4) {
+            $('.bottom_navbar').addClass('has_4');
+        }
         $(window).on("load resize", function(e) {
             _ww = $(window).width();
             if (_ww >= 768) {
                 $('.bottom_navbar').appendTo('.wrapper');
             } else {
-                $('.bottom_navbar').appendTo('body');
+                $('.bottom_navbar').appendTo('.wrapper');
             }
         });
     }
@@ -82,5 +184,4 @@ $(function() {
             });
         }
     });
-
 });
