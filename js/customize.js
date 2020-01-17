@@ -1,6 +1,14 @@
 // 自行加入的JS請寫在這裡
 $(function() {
     //
+    $('.language_choose ul li').each(function(index, el) {
+        $(this).find('a').click(function(e) {
+            $(this).parent().siblings().find('a').removeClass('active');
+            $(this).addClass('active');
+           e.preventDefault();
+        });
+    });
+    //
     $('.colorbox_search').css('top', '100%').hide();
     $('.colorbox_showlist').css('top', '100%').hide();
     $('.colorbox_sort').css('top', '100%').hide();

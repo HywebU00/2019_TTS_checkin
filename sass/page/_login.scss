@@ -962,6 +962,9 @@ h3 {
                 text-align: center;
                 padding: .5em 1.5em;
                 white-space: nowrap;
+                &.active{
+                    background:$color-orange;
+                }
             }
         }
     }
