@@ -431,11 +431,11 @@ input[type="radio"]:checked {
 //---------------------------------------------readonly disable -------//
 input[readonly],
 input[disable] {
-    background: lighten($color-gray, 15);
+    background: lighten($color-gray, 2);
     color:#000;
     border-color: transparent;
     &~label {
-        color: darken($color-gray, 10);
+        color: darken($color-gray, 1);
     }
     &:hover,
     &:focus {
